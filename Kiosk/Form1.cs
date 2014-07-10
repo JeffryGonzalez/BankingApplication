@@ -19,14 +19,14 @@ namespace Kiosk
 		}
 
 		private Account _currentAccount;
-		private BankingContext _context = new BankingContext();
+		private BankManager _manager = new BankManager();
 
 		private void btnFind_Click(object sender, EventArgs e)
 		{
 			try
 			{
 				var accountId = int.Parse(txtId.Text);
-				_currentAccount = _context.Accounts.Find(accountId);
+				_currentAccount = _manager.Lookup(accountId);
 				lblFullName.Text = string.Format("Account {0}:  {1}, {2}", _currentAccount.Id, _currentAccount.LastName,
 					_currentAccount.FirstName);
 				UpdateBalance();
@@ -64,7 +64,7 @@ namespace Kiosk
 				action(amount);
 				UpdateBalance();
 				txtAmount.Clear();
-				_context.SaveChanges();
+				_manager.Update(_currentAccount);
 			}
 			catch (FormatException)
 			{
@@ -84,7 +84,7 @@ namespace Kiosk
 
 		private void Form1_FormClosing(object sender, FormClosingEventArgs e)
 		{
-			_context.Dispose();
+			_manager.Dispose();
 		}
 
 
