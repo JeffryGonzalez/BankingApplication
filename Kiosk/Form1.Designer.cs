@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.grpTransaction = new System.Windows.Forms.GroupBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.txtId = new System.Windows.Forms.TextBox();
 			this.btnFind = new System.Windows.Forms.Button();
@@ -39,7 +39,7 @@
 			this.btnDeposit = new System.Windows.Forms.Button();
 			this.btnWithdraw = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
-			this.groupBox2.SuspendLayout();
+			this.grpTransaction.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// groupBox1
@@ -54,19 +54,20 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Account Lookup";
 			// 
-			// groupBox2
+			// grpTransaction
 			// 
-			this.groupBox2.Controls.Add(this.btnWithdraw);
-			this.groupBox2.Controls.Add(this.btnDeposit);
-			this.groupBox2.Controls.Add(this.txtAmount);
-			this.groupBox2.Controls.Add(this.lblBalance);
-			this.groupBox2.Controls.Add(this.lblFullName);
-			this.groupBox2.Location = new System.Drawing.Point(21, 201);
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(939, 412);
-			this.groupBox2.TabIndex = 4;
-			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "Account Information";
+			this.grpTransaction.Controls.Add(this.btnWithdraw);
+			this.grpTransaction.Controls.Add(this.btnDeposit);
+			this.grpTransaction.Controls.Add(this.txtAmount);
+			this.grpTransaction.Controls.Add(this.lblBalance);
+			this.grpTransaction.Controls.Add(this.lblFullName);
+			this.grpTransaction.Enabled = false;
+			this.grpTransaction.Location = new System.Drawing.Point(21, 201);
+			this.grpTransaction.Name = "grpTransaction";
+			this.grpTransaction.Size = new System.Drawing.Size(939, 412);
+			this.grpTransaction.TabIndex = 4;
+			this.grpTransaction.TabStop = false;
+			this.grpTransaction.Text = "Account Information";
 			// 
 			// label1
 			// 
@@ -144,15 +145,15 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(972, 644);
-			this.Controls.Add(this.groupBox2);
+			this.Controls.Add(this.grpTransaction);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "Form1";
 			this.Text = "Bank Kiosk";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
-			this.groupBox2.ResumeLayout(false);
-			this.groupBox2.PerformLayout();
+			this.grpTransaction.ResumeLayout(false);
+			this.grpTransaction.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -163,7 +164,7 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox txtId;
 		private System.Windows.Forms.Button btnFind;
-		private System.Windows.Forms.GroupBox groupBox2;
+		private System.Windows.Forms.GroupBox grpTransaction;
 		private System.Windows.Forms.Label lblFullName;
 		private System.Windows.Forms.Button btnWithdraw;
 		private System.Windows.Forms.Button btnDeposit;

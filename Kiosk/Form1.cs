@@ -23,14 +23,25 @@ namespace Kiosk
 
 		private void btnFind_Click(object sender, EventArgs e)
 		{
-			var accountId = int.Parse(txtId.Text);
-
-			
+			try
+			{
+				var accountId = int.Parse(txtId.Text);
 				_currentAccount = _context.Accounts.Find(accountId);
 				lblFullName.Text = string.Format("Account {0}:  {1}, {2}", _currentAccount.Id, _currentAccount.LastName,
 					_currentAccount.FirstName);
 				UpdateBalance();
-			
+				grpTransaction.Enabled = true;
+			}
+			catch (FormatException)
+			{
+				MessageBox.Show("Enter a Number, Please.");
+			}
+			finally
+			{
+				txtId.SelectAll();
+				txtId.Focus();
+			}
+
 
 		}
 
@@ -46,12 +57,24 @@ namespace Kiosk
 
 		public void DoTransaction(Action<decimal> action)
 		{
-			var amount = decimal.Parse(txtAmount.Text);
-		
+			try
+			{
+				var amount = decimal.Parse(txtAmount.Text);
+
 				action(amount);
 				UpdateBalance();
 				txtAmount.Clear();
 				_context.SaveChanges();
+			}
+			catch (FormatException)
+			{
+				MessageBox.Show("Enter a Number Please");
+			}
+			finally
+			{
+				txtAmount.SelectAll();
+				txtAmount.Focus();
+			}
 		}
 
 		private void btnWithdraw_Click(object sender, EventArgs e)
@@ -64,7 +87,7 @@ namespace Kiosk
 			_context.Dispose();
 		}
 
-		
-		
+
+
 	}
 }
