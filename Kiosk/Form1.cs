@@ -36,6 +36,10 @@ namespace Kiosk
 			{
 				MessageBox.Show("Enter a Number, Please.");
 			}
+			catch (NoSuchAccountException)
+			{
+				MessageBox.Show("No Such Account");
+			}
 			finally
 			{
 				txtId.SelectAll();

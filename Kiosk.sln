@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kiosk", "Kiosk\Kiosk.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankingDomain", "BankingDomain\BankingDomain.csproj", "{EEDC2863-D4EE-45D4-B1A1-274AABCC0D3E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankingLowLevelTests", "BankingLowLevelTests\BankingLowLevelTests.csproj", "{5BC059B8-7E76-49B4-8C37-FF9C32ADF5E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EEDC2863-D4EE-45D4-B1A1-274AABCC0D3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEDC2863-D4EE-45D4-B1A1-274AABCC0D3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEDC2863-D4EE-45D4-B1A1-274AABCC0D3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BC059B8-7E76-49B4-8C37-FF9C32ADF5E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BC059B8-7E76-49B4-8C37-FF9C32ADF5E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BC059B8-7E76-49B4-8C37-FF9C32ADF5E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BC059B8-7E76-49B4-8C37-FF9C32ADF5E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
