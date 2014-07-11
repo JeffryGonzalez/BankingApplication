@@ -13,6 +13,10 @@ namespace BankingDomain
 		public Account Lookup(int id)
 		{
 			var account = _context.Accounts.Find(id);
+			if (account == null)
+			{
+				throw new NoSuchAccountException();
+			}
 			return account;
 		}
 
